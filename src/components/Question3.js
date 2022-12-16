@@ -32,7 +32,7 @@ const Question3 = (props) => {
     },[ans])  
 
     useEffect(()=>{
-        ans.sort(()=>Math.random()-0.5)
+        setans(prevstate=>prevstate.sort(()=>Math.random()-0.5))
     },[])
 
     return ( 

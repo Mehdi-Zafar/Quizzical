@@ -31,7 +31,8 @@ const Question5 = (props) => {
     },[ans])  
 
     useEffect(()=>{
-        ans.sort(()=>Math.random()-0.5)
+        setans(prevstate=>prevstate.sort(()=>Math.random()-0.5))
+        console.log('ran')
     },[])
 
     return ( 
@@ -40,7 +41,7 @@ const Question5 = (props) => {
                 <div className="answers">
                     {ans && ans.map((answer)=>(
                         <p 
-                        key={answer.Ans}
+                        // key={answer.Ans}
                         className="answer" 
                         style={{backgroundColor:((props.totalScore !== null && answer.Ans === correctAnswer) ? "#90EE90": (props.totalScore !== null && answer.isClicked && answer.Ans !== correctAnswer) ? "#F8BCBC" : answer.isClicked ? "#D6DBF5":"#F5F7FB"),border:props.totalScore !== null && answer.Ans === correctAnswer ? "#90EE90": answer.isClicked?"1px solid #D6DBF5":"1px solid #4d5b9e"}} 
                         onClick={handleClick}
