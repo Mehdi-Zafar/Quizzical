@@ -1,13 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Karla&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f7fb;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+div.start-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+div.start-container div h1 {
+  font-family: "Karla", sans-serif;
+  margin-bottom: 7px;
+  color: #293264;
+}
+
+div.start-container p,
+div.start-container button {
+  font-family: "Inter", sans-serif;
+}
+
+div.start-container p {
+  color: #293264;
+}
+
+div.start-container button,
+div button.checkAns {
+  padding: 13px 40px;
+  background-color: #4d5b9e;
+  color: #f5f7fb;
+  border: none;
+  border-radius: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+div button.checkAns {
+  display: block;
+  margin: 20px auto;
+  font-size: 1.02srem;
+  font-family: "Inter", sans-serif;
+  padding: 15px 30px;
+}
+
+div.lemonyBg {
+  position: absolute;
+  width: 200px;
+  height: 180px;
+  right: 40px;
+  top: -25px;
+  transform: rotate(-128.49deg);
+  background-color: lemonchiffon;
+  overflow: hidden;
+  border-radius: 30%;
+  z-index: -1;
+}
+
+div.babyBg {
+  position: absolute;
+  width: 267px;
+  height: 215px;
+  left: -48px;
+  bottom: 65px;
+  background-color: #9ec4c5;
+  border-radius: 30%;
+  transform: rotate(-128.49deg);
+  overflow: hidden;
+  z-index: -1;
+}
+
+div.lightBlueBg {
+  position: absolute;
+  width: 209px;
+  height: 189px;
+  right: 50px;
+  bottom: -120px;
+  background-color: aqua;
+  border-radius: 30%;
+  transform: rotate(128.49deg);
+  overflow: hidden;
+  z-index: -1;
+}
+
+div.container {
+  margin: 30px auto;
+}
+
+div.question-template {
+  margin: auto;
+  width: 57%;
+}
+
+.question {
+  font-family: "Karla", sans-serif;
+  color: #293264;
+}
+
+div.answers {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.answer {
+  font-family: "Inter", sans-serif;
+  width: fit-content;
+  min-width: 30px;
+  text-align: center;
+  border: 1px solid #4d5b9e;
+  border-radius: 10px;
+  padding: 5px 15px;
+  color: #293264;
+  font-weight: 600;
+  margin-inline: 8px;
+  cursor: pointer;
+}
+
+div.border {
+  background-color: #dbdef0;
+  width: 100%;
+  height: 2px;
+}
+
+.result {
+  font-family: "Karla", sans-serif;
+  color: #293264;
+  text-align: center;
+}
+
+div.grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100vh;
+}
+
+@media screen and (max-width: 1024px) {
+  div.question-template {
+    width: 80%;
+  }
+
+  div.lemonyBg {
+    position: absolute;
+    width: 200px;
+    height: 180px;
+    right: 40px;
+    top: -25px;
+    transform: rotate(-128.49deg);
+    background-color: rgba(255, 250, 205, 0.39);
+    overflow: hidden;
+    border-radius: 30%;
+    z-index: -1;
+  }
+
+  div.babyBg {
+    position: absolute;
+    width: 267px;
+    height: 215px;
+    left: -48px;
+    bottom: 65px;
+    background-color: #9ec4c534;
+    border-radius: 30%;
+    transform: rotate(-128.49deg);
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  div.lightBlueBg {
+    position: absolute;
+    width: 209px;
+    height: 189px;
+    right: 50px;
+    bottom: -120px;
+    background-color: rgba(0, 255, 255, 0.185);
+    border-radius: 30%;
+    transform: rotate(128.49deg);
+    overflow: hidden;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  div.question-template {
+    width: 90%;
+  }
+  div.lemonyBg {
+    position: absolute;
+    width: 160px;
+    height: 140px;
+    right: 40px;
+    top: -25px;
+    transform: rotate(-128.49deg);
+    background-color: rgba(255, 250, 205, 0.39);
+    overflow: hidden;
+    border-radius: 30%;
+    z-index: -1;
+  }
+
+  div.babyBg {
+    position: absolute;
+    width: 155px;
+    height: 130px;
+    left: -48px;
+    bottom: 65px;
+    background-color: #9ec4c534;
+    border-radius: 30%;
+    transform: rotate(-128.49deg);
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  div.lightBlueBg {
+    position: absolute;
+    width: 150px;
+    height: 120px;
+    right: 50px;
+    bottom: -70px;
+    background-color: rgba(0, 255, 255, 0.185);
+    border-radius: 30%;
+    transform: rotate(128.49deg);
+    overflow: hidden;
+    z-index: -1;
+  }
 }
